@@ -1,0 +1,25 @@
+{
+  "name": "uptask",
+  "version": "1.0.0",
+  "description": "lista de tareas",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/CristhianDaza/proyecto-tareas.git"
+  },
+  "author": "Cristhian Daza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CristhianDaza/proyecto-tareas/issues"
+  },
+  "homepage": "https://github.com/CristhianDaza/proyecto-tareas#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
