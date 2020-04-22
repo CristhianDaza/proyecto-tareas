@@ -22,9 +22,10 @@ html(lang="es")
             if(proyectos.length)
               each proyecto in proyectos
                 li
-                  a(href=`${proyecto.url}`)= proyecto.nombre
+                  a(href=`/proyectos/${proyecto.url}`)= proyecto.nombre
 
       block contenido
+      pre= vardump(proyectos)
 
 
 
