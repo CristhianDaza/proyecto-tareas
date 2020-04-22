@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize('tasknode', 'root', '', {
+const db = new Sequelize('tasknode', 'root', '', {
   host: 'localhost',
   dialect: 'mysql',
   port: '3306',
@@ -14,3 +14,5 @@ const sequelize = new Sequelize('tasknode', 'root', '', {
     idel: 10000
   }
 })
+
+module.exports = db
