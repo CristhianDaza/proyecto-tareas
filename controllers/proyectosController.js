@@ -36,17 +36,36 @@ exports.nuevoProyecto = async (req, res) => {
 }
 
 exports.proyectoPorUrl = async (req, res) => {
-  const proyectos = await Proyectos.findAll()
-  const proyecto = await Proyectos.findOne({
+  const proyectosPomise = Proyectos.findAll()
+  const proyectoPomise = Proyectos.findOne({
     where: {
       url: req.params.url
     }
   })
 
+  const [proyectos, proyecto] = await Promise.all([proyectosPomise, proyectoPomise])
+
   if (!proyecto) return next()
 
   res.render('tareas', {
     nombrePagina: 'Tareas del Proyecto',
+    proyectos,
+    proyecto
+  })
+}
+
+exports.formularioEditar = async (req, res) => {
+  const proyectosPomise = Proyectos.findAll()
+  const proyectoPomise = Proyectos.findOne({
+    where: {
+      id: req.params.id
+    }
+  })
+
+  const [proyectos, proyecto] = await Promise.all([proyectosPomise, proyectoPomise])
+
+  res.render('nuevoProyecto', {
+    nombrePagina: 'Editar Proyecto',
     proyectos,
     proyecto
   })
