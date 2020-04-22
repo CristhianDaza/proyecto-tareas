@@ -236,13 +236,16 @@ body.index {
     color: #00B762;
 }
 .alerta {
-    padding: .5rem;
-    text-align: center;
-    font-size: .9rem;
-    font-weight: 900;
-    max-width: 300px;
-    margin: 0 auto 1rem auto;
-    text-transform: uppercase;
+  border: 3px solid red;
+  color: red;
+  background-color: #d98c79;
+  padding: .5rem;
+  text-align: center;
+  font-size: .9rem;
+  font-weight: 900;
+  max-width: 300px;
+  margin: 0 auto 1rem auto;
+  text-transform: uppercase;
 }
 .error {
     color: red!important;

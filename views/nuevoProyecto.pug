@@ -3,7 +3,12 @@ extends layout
 block contenido
   .contenido-principal
     h1=nombrePagina
-    form.agregar-proyecto
+
+    if errores
+      each error in errores
+        .alerta= error.texto
+
+    form(action="/nuevo-proyecto" method="POST").agregar-proyecto
       .campo
         label(for="nombre") Nombre Proyecto
         input(type="text" name="nombre" placeholder="Nombre Proyecto")#nombre
