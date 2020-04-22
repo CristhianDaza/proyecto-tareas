@@ -19,12 +19,10 @@ html(lang="es")
         .panel.lista-proyectos
           h2 Proyectos
           ul#proyectos.proyectos
-            li
-              a(href="#") Diseño de Tienda Virtual
-            li
-              a(href="#") Diseño de Nuevo Blog
-            li
-              a(href="#") Diseño de Logotipo
+            if(proyectos.length)
+              each proyecto in proyectos
+                li
+                  a(href=`${proyecto.url}`)= proyecto.nombre
 
       block contenido
 
