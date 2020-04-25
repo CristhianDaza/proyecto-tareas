@@ -11,6 +11,21 @@ block contenido
       .campo.enviar
         input(type="submit" value="Agregar").boton.nueva-tarea
 
+    .listado-pendientes
+      ul
+        if tareas,length
+          each tarea in tareas
+            li.tarea
+              p= tarea.tarea
+              .acciones
+                if tarea.estado
+                  i.far.fa-check-circle.completo
+                else
+                  i.far.fa-check-circle
+                i.fas.fa-trash
+        else
+          p No hay tareas en estre proyecto
+
     .contenedor-acciones
       a(href=`/proyecto/editar/${proyecto.id}`).boton Editar
       button(data-proyecto-url=proyecto.url type="button")#eliminar-proyecto.boton.eliminar Eliminar
