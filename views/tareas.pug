@@ -6,4 +6,4 @@ block contenido
 
     .contenedor-acciones
       a(href=`/proyecto/editar/${proyecto.id}`).boton Editar
-      button(type="button")#eliminar-proyecto.boton.eliminar Eliminar
+      button(data-proyecto-url=proyecto.url type="button")#eliminar-proyecto.boton.eliminar Eliminar
