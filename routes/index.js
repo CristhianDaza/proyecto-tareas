@@ -31,7 +31,7 @@ module.exports = function() {
 
   router.delete('/proyectos/:url', proyectosController.eliminarProyecto)
 
-  router.post('/proyectos/url', tareasController.agregarTarea)
+  router.post('/proyectos/:url', tareasController.agregarTarea)
 
   return router
 }
