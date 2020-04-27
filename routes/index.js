@@ -35,5 +35,7 @@ module.exports = function() {
 
   router.patch('/tareas/:id', tareasController.cambiarEstadoTarea)
 
+  router.delete('/tareas/:id', tareasController.eliminarTarea)
+
   return router
 }
