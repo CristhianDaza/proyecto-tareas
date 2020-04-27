@@ -1,6 +1,8 @@
 import axios from "axios"
 import Swal from 'sweetalert2'
 
+import { actualizarAvance } from '../funciones/avance'
+
 const tareas = document.querySelector('.listado-pendientes')
 
 if(tareas) {
@@ -13,6 +15,7 @@ if(tareas) {
         .then(function(res) {
           if(res.status === 200) {
             icono.classList.toggle('completo')
+            actualizarAvance()
           }
         })
     }
@@ -42,6 +45,8 @@ if(tareas) {
                     res.data,
                     'success'
                   )
+
+                  actualizarAvance()
                 }
               })
           }
