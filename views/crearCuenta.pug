@@ -6,13 +6,17 @@ html(lang="es")
     .contenedor-formulario
       h1 Crea tu cuenta
 
+      if errores
+        each error in errores
+          p.error.alerta= error.message
+
       form(method="POST" action="/crear-cuenta")#formulario.caja.caja-login
         .campo
           label(for="email") Coreo Eléctronico
-          input(type="email" name="email" placeholder="Email" required)
+          input(type="email" name="email" placeholder="Email" )
         .campo
           label(for="password") Contraseña
-          input(type="password" name="password" placeholder="Contraseña" required)
+          input(type="password" name="password" placeholder="Contraseña" )
         .campo.enviar
           input(type="submit" value="Crear Cuenta").boton
         .campo
