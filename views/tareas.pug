@@ -26,6 +26,11 @@ block contenido
         else
           p No hay tareas en estre proyecto
 
+    .avance
+      h2 Avance del Proyecto
+      #barra-avance.barra-avance
+        #porcentaje.porcentaje
+
     .contenedor-acciones
       a(href=`/proyecto/editar/${proyecto.id}`).boton Editar
       button(data-proyecto-url=proyecto.url type="button")#eliminar-proyecto.boton.eliminar Eliminar
