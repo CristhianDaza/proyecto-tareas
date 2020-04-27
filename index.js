@@ -2,12 +2,13 @@ const express = require('express')
 const routes = require('./routes')
 const path = require('path')
 const bodyParser = require('body-parser')
-const helpers = require('./helpers');
+const helpers = require('./helpers')
 
 const db = require('./config/db')
 
-require('./models/Proyectos');
-require('./models/Tareas');
+require('./models/Proyectos')
+require('./models/Tareas')
+require('./models/Usuarios')
 
 db.sync()
   .then(() => console.log('Conectado al servidor'))
