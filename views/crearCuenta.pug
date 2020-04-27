@@ -6,9 +6,12 @@ html(lang="es")
     .contenedor-formulario
       h1 Crea tu cuenta
 
-      if errores
-        each error in errores
-          p.error.alerta= error.message
+      if locals.mensajes
+        .alertas
+          each categoria in Object.keys(locals.mensajes)
+            each error in mensajes[categoria]
+              .alerta(class=`${categoria}`)
+                p= error
 
       form(method="POST" action="/crear-cuenta")#formulario.caja.caja-login
         .campo

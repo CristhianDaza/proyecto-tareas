@@ -17,12 +17,12 @@ const Usuarios = db.define('usuarios', {
         msg: 'Agrega un Correo Válido'
       },
       notEmpty: {
-        msg: 'El Correo no puede ir vacia'
+        msg: 'El Correo no puede ir vacio'
       }
     },
     unique: {
       args: true,
-      msg: 'Correo ya registrado'
+      msg: 'Correo ya está registrado'
     }
   },
   password: {

@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 const expressValidator = require('express-validator')
 const helpers = require('./helpers')
 const flash = require('connect-flash')
+const session = require('express-session')
+const cookieParser = require('cookie-parser');
 
 const db = require('./config/db')
 
@@ -18,20 +20,29 @@ db.sync()
 
 const app = express()
 
-app.use(bodyParser.urlencoded({extended: true}))
-
-app.use(expressValidator())
-
 app.use(express.static('public'))
 
 app.set('view engine', 'pug')
+
+app.use(bodyParser.urlencoded({extended: true}))
+
+app.use(expressValidator())
 
 app.set('views', path.join(__dirname, './views'))
 
 app.use(flash())
 
+app.use(cookieParser())
+
+app.use(session({
+  secret: 'supersecreto',
+  resave: false,
+  saveUninitialized: false
+}))
+
 app.use((req, res, next) => {
   res.locals.vardump = helpers.vardump
+  res.locals.mensajes = req.flash()
   next()
 })
 
