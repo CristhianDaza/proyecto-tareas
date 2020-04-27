@@ -2,6 +2,7 @@ const express = require('express')
 const routes = require('./routes')
 const path = require('path')
 const bodyParser = require('body-parser')
+const expressValidator = require('express-validator')
 const helpers = require('./helpers')
 
 const db = require('./config/db')
@@ -15,6 +16,8 @@ db.sync()
   .catch(error => console.log(error))
 
 const app = express()
+
+app.use(expressValidator())
 
 app.use(express.static('public'))
 
