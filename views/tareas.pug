@@ -2,7 +2,7 @@ extends layout
 
 block contenido
   .contenido-principal
-    h1 Proyecto - #{proyecto.nombre}
+    h1 #{proyecto.nombre}
 
     form(action=`/proyectos/${proyecto.url}` method="POST").agregar-tarea
       .campo

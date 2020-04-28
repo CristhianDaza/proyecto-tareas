@@ -31,7 +31,8 @@ exports.nuevoProyecto = async (req, res) => {
       errores
     })
   } else {
-    const proyecto = await Proyectos.create({ nombre })
+    const usuarioId = res.locals.usuario.id
+    const proyecto = await Proyectos.create({ nombre, usuarioId })
     res.redirect('/')
   }
 }
