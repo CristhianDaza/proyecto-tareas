@@ -70,7 +70,6 @@ module.exports = function() {
   )
 
   router.get('/crear-cuenta',
-    authController.usuarioAutenticado,
     usuariosController.formCrearCuenta
   )
 
@@ -79,6 +78,8 @@ module.exports = function() {
   router.get('/iniciar-sesion', usuariosController.formIniciarSesion)
 
   router.post('/iniciar-sesion', authController.autenticarUsuario)
+
+  router.get('/cerrar-sesion', authController.cerrarSesion)
 
   return router
 }
