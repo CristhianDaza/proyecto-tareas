@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+html(lang="es")
+  head
+    include partials/header
+  body.login
+    .contenedor-formulario
+      h1 Inicia Sesión
+
+      form(method="POST" action="/iniciar-sesion")#formulario.caja.caja-login
+        .campo
+          label(for="email") Coreo Eléctronico
+          input(type="email" name="email" placeholder="Email" value= email)
+        .campo
+          label(for="password") Contraseña
+          input(type="password" name="password" placeholder="Contraseña" value= password)
+        .campo.enviar
+          input(type="submit" value="Iniciar Sesión").boton
+        .campo
+          a(href="/crear-cuenta") ¿Aún no tines cuenta? Crea una gratis
+

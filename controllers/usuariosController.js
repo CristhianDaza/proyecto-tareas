@@ -6,6 +6,12 @@ exports.formCrearCuenta = (req, res) => {
   })
 }
 
+exports.formIniciarSesion = (req, res) => {
+  res.render('iniciarSesion', {
+    nombrePagina: 'Inicia Sesión'
+  })
+}
+
 exports.crearCuenta = async (req, res) => {
   const { email, password } = req.body
 
