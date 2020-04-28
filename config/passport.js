@@ -14,7 +14,7 @@ passport.use(
     },
     async (email, password, done) => {
       try {
-        const usuario = await Usuarios.find({
+        const usuario = await Usuarios.findOne({
           where: { email }
         })
         // El usaurio existe, password incorrecto
