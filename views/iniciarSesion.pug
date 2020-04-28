@@ -11,13 +11,14 @@ html(lang="es")
 
       form(method="POST" action="/iniciar-sesion")#formulario.caja.caja-login
         .campo
-          label(for="email") Coreo Eléctronico
+          label(for="email") Coreo Electrónico
           input(type="email" name="email" placeholder="Email" value= email)
         .campo
           label(for="password") Contraseña
           input(type="password" name="password" placeholder="Contraseña" value= password)
         .campo.enviar
           input(type="submit" value="Iniciar Sesión").boton
-        .campo
+        .campo.acciones
           a(href="/crear-cuenta") ¿Aún no tines cuenta? Crea una gratis
+          a(href="/reestablecer") ¿Olvidaste tu Contraseña?
 

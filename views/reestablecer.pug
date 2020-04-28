@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+html(lang="es")
+  head
+    include partials/header
+  body.login
+    .contenedor-formulario
+      h1= nombrePagina
+      p Agrega tu Email para reestablecer la contraseña
+      form(method="POST" action="/reestablecer").caja-login
+        .campo
+          label(for="email") Coreo Electrónico
+          input(type="email" name="email" placeholder="Email" value= email)
+        .campo.enviar
+          input(type="submit" value="Reestablecer Password").boton
+        .campo.aciones
+          a(href="/iniciar-sesion") Ya lo recordé, volver a Login
