@@ -34,9 +34,6 @@ exports.enviarToken = async (req, res) => {
   // Si no exite el usuario
   if (!usuario) {
     req.flash('error', 'No exite esa cuenta')
-    res.render('reestablecer', {
-      nombrePagina: 'Reestablecer tu Contraseña',
-      mensajes: req.flash()
-    })
+    res.redirect('/reestablecer')
   }
 }
