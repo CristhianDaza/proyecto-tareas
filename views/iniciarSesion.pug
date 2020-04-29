@@ -9,6 +9,8 @@ html(lang="es")
       if error
         p.alerta.error= error
 
+      include partials/mensajes
+
       form(method="POST" action="/iniciar-sesion")#formulario.caja.caja-login
         .campo
           label(for="email") Coreo Electrónico

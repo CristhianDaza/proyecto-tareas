@@ -7,12 +7,7 @@ html(lang="es")
       h1= nombrePagina
       p Agrega tu Email para reestablecer la contraseña
 
-      if locals.mensajes
-        .alertas
-          each categoria in Object.keys(locals.mensajes)
-            each error in mensajes[categoria]
-              .alerta(class=`${categoria}`)
-                p= error
+      include partials/mensajes
 
       form(method="POST" action="/reestablecer").caja-login
         .campo
