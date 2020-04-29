@@ -6,9 +6,6 @@ html(lang="es")
     .contenedor-formulario
       h1 Inicia Sesión
 
-      if error
-        p.alerta.error= error
-
       include partials/mensajes
 
       form(method="POST" action="/iniciar-sesion")#formulario.caja.caja-login
